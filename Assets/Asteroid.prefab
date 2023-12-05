@@ -120,10 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7150275850456613359}
-  startPositionRange: 10
+  startPositionRange: 30
   speedRange: 2
   scaleMaximum: 4
   scaleMinimum: 1
+  volume: 0
 --- !u!54 &7150275850456613359
 Rigidbody:
   m_ObjectHideFlags: 0

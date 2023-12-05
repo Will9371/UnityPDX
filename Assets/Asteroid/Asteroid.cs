@@ -18,19 +18,21 @@ public class Asteroid : MonoBehaviour
     void Start()
     {
         gravity = Gravity.instance;
-        gravity.AddAsteroid(this);
+        gravity.AddAsteroid(rb);
         InitializeRandom();
     }
     
     void InitializeRandom()
     {
-        transform.position = Random.insideUnitSphere * startPositionRange;
+        rb.position = Random.insideUnitSphere * startPositionRange;
         transform.localScale = Random.Range(scaleMinimum, scaleMaximum) * Vector3.one;
         
         var scaleX = transform.localScale.x;
         var radius = scaleX/2f;
         volume = 4f/3f * Mathf.PI * Mathf.Pow(radius, 3);
         rb.mass = volume;
-        rb.velocity = Random.insideUnitSphere * speedRange;
+        rb.AddForce(Random.insideUnitSphere * speedRange, ForceMode.VelocityChange);
     }
+    
+    void FixedUpdate() => gravity.ApplyGravity(rb);
 }
