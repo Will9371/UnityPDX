@@ -1,18 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ZMD;
 
-public class Gravity : MonoBehaviour
+public class Gravity : Singleton<Gravity>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [field: SerializeField] public List<Asteroid> asteroids { get; private set; } = new();
+    public void AddAsteroid(Asteroid newAsteroid) => asteroids.Add(newAsteroid);
+    
 }

@@ -4,6 +4,7 @@ public class Asteroid : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] Rigidbody rb;
+    Gravity gravity;
     
     [Header("Settings")]
     public float startPositionRange;
@@ -16,6 +17,8 @@ public class Asteroid : MonoBehaviour
 
     void Start()
     {
+        gravity = Gravity.instance;
+        gravity.AddAsteroid(this);
         InitializeRandom();
     }
     
