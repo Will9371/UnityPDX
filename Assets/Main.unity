@@ -1525,7 +1525,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2086429894
 MonoBehaviour:
@@ -1540,12 +1540,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2086429893}
-  forward: 273
-  backward: 274
+  forward: 105
+  backward: 107
+  left: 106
+  right: 108
+  up: 117
+  down: 111
+  yawPositive: 100
+  yawNegative: 97
+  pitchPositive: 115
+  pitchNegative: 119
+  rollPositive: 113
+  rollNegative: 101
   boost: 32
   brake: 98
   engineStrength: 10
   boostMultiplier: 5
+  rotationStrength: 0.5
   brakeForce: 0.9
 --- !u!1001 &2093016568
 PrefabInstance:
